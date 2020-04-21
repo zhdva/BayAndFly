@@ -1,16 +1,33 @@
 package org.buyandfly.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "devices")
 public class Device {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String type;
+
     private String title;
-    private int price;
+
+    private long price;
+
+    @Column(name = "number_of_passengers")
     private int numberOfPassengers;
+
     private String material;
+
+    @Column(name = "max_speed")
     private int maxSpeed;
+
     private String equipment;
+
     private String dimensions;
+
     private int weight;
 
     public String getType() {
@@ -21,7 +38,7 @@ public class Device {
         return title;
     }
 
-    public int getPrice() {
+    public long getPrice() {
         return price;
     }
 
@@ -78,7 +95,7 @@ public class Device {
     }
 
     public void setDimensions(final float length, final float width, final float height) {
-        this.dimensions = Float.toString(length) + "x" + Float.toString(width) + "x" + Float.toString(height);
+        this.dimensions = Float.toString(length) + "x" + Float.toString(width) + "x" + Float.toString(height) + " м";
     }
 
     public void setWeight(final int weight) {
