@@ -1,24 +1,26 @@
 package org.buyandfly.service;
 
-import org.buyandfly.dao.DeviceDao;
+import org.buyandfly.dao.IDao;
 import org.buyandfly.model.Device;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
+@Service
 public class DeviceService implements IService<Device> {
 
-    private DeviceDao deviceDao;
+    private IDao<Device> deviceDao;
 
     @Autowired
-    public void setDeviceDAO(final DeviceDao deviceDao) {
+    public void setDeviceDAO(final IDao<Device> deviceDao) {
         this.deviceDao = deviceDao;
     }
 
     @Override
     @Transactional
-    public Device getById(int id) {
+    public Device getById(final long id) {
         return deviceDao.getById(id);
     }
 
