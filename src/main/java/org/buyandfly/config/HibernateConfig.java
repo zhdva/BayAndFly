@@ -22,7 +22,7 @@ public class HibernateConfig {
     private Environment environment;
 
     @Autowired
-    public void setEnvironment(Environment environment) {
+    public void setEnvironment(final Environment environment) {
         this.environment = environment;
     }
 
@@ -33,7 +33,6 @@ public class HibernateConfig {
         return properties;
     }
 
-    @Bean
     public DataSource dataSource() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
