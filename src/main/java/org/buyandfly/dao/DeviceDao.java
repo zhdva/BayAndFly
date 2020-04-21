@@ -10,15 +10,16 @@ import java.util.List;
 
 @Repository
 public class DeviceDao implements IDao<Device> {
+
     private SessionFactory sessionFactory;
 
     @Autowired
-    public void setSessionFactory(SessionFactory sessionFactory) {
+    public void setSessionFactory(final SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
     @Override
-    public Device getById(final int id) {
+    public Device getById(final long id) {
         Session session = sessionFactory.getCurrentSession();
         return session.get(Device.class, id);
     }
