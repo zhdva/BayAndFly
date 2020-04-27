@@ -6,6 +6,7 @@
     <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+    <%@include file="/WEB-INF/pages/nav.jsp"%>
     <table class="catalog">
     <caption class="heading">Каталог</caption>
         <c:if test="${devicesCount > 0}">

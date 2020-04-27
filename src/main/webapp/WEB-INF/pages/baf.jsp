@@ -6,23 +6,11 @@
     <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="/catalog">Каталог</a>
-      <a href="#contact">Контакты</a>
-      <a href="#about">О компании</a>
-      <div class="topnav-right">
-          <a href="#login">Вход</a>
-          <a href="#register">Регистрация</a>
-        </div>
-    </div>
+    <%@include file="/WEB-INF/pages/nav.jsp"%>
 
-    <div id="mySidenav" class="sidenav">
-      <a href="#" id="sam">Самолёты</a>
-      <a href="#" id="ver">Вертолёты</a>
-      <a href="#" id="vsh">Воздушные шары</a>
-      <a href="#" id="zzz">Зонты</a>
-    </div>
+    <h3>Интернет-магазин Buy and Fly</h3>
+    <p>Купи и съеби</p>
 
+    <p>© 2020, Buy and Fly. Никаких прав нет.</p>
 </body>
 </html>
