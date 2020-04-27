@@ -40,4 +40,11 @@ public class BAFController {
         modelAndView.addObject("devicesCount", devicesCount);
         return modelAndView;
     }
+
+    @GetMapping(value = "/register")
+    public ModelAndView registerPage() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("register");
+        return modelAndView;
+    }
 }
