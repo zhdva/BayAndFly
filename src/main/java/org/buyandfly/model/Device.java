@@ -30,6 +30,10 @@ public class Device {
 
     private int weight;
 
+    public long getId() {
+        return id;
+    }
+
     public String getType() {
         return type;
     }
@@ -66,6 +70,10 @@ public class Device {
         return weight;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public void setType(final String type) {
         this.type = type;
     }
@@ -74,7 +82,7 @@ public class Device {
         this.title = title;
     }
 
-    public void setPrice(final int price) {
+    public void setPrice(final long price) {
         this.price = price;
     }
 
@@ -92,6 +100,10 @@ public class Device {
 
     public void setEquipment(final String equipment) {
         this.equipment = equipment;
+    }
+
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
     }
 
     public void setDimensions(final float length, final float width, final float height) {
