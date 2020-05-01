@@ -41,6 +41,20 @@ public class BAFController {
         return modelAndView;
     }
 
+    @GetMapping(value = "/contacts")
+    public ModelAndView contactsPage() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("contacts");
+        return modelAndView;
+    }
+
+    @GetMapping(value = "/about")
+    public ModelAndView aboutPage() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("about");
+        return modelAndView;
+    }
+
     @GetMapping(value = "/register")
     public ModelAndView registerPage() {
         ModelAndView modelAndView = new ModelAndView();
