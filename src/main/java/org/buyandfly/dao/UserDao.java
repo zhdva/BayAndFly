@@ -18,7 +18,7 @@ public class UserDao implements IDao<User> {
     }
 
     @Override
-    public User getById(final int id) {
+    public User getById(final long id) {
         Session session = sessionFactory.getCurrentSession();
         return session.get(User.class, id);
     }
