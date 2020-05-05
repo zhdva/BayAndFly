@@ -1,6 +1,7 @@
 package org.buyandfly.service;
 
-import org.buyandfly.dao.IDao;
+import org.buyandfly.dao.DeviceDao;
+import org.buyandfly.dao.IDeviceDao;
 import org.buyandfly.model.Device;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,12 +10,12 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class DeviceService implements IService<Device> {
+public class DeviceService implements IDeviceService {
 
-    private IDao<Device> deviceDao;
+    private IDeviceDao deviceDao;
 
     @Autowired
-    public void setDeviceDAO(final IDao<Device> deviceDao) {
+    public void setDeviceDAO(final IDeviceDao deviceDao) {
         this.deviceDao = deviceDao;
     }
 

@@ -1,6 +1,6 @@
 package org.buyandfly.service;
 
-import org.buyandfly.dao.UserDao;
+import org.buyandfly.dao.IUserDao;
 import org.buyandfly.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,12 +9,12 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class UserService implements IService<User> {
+public class UserService implements IUserService {
 
-    private UserDao userDao;
+    private IUserDao userDao;
 
     @Autowired
-    public void setUserDAO(final UserDao userDao) {
+    public void setUserDAO(final IUserDao userDao) {
         this.userDao = userDao;
     }
 
@@ -22,6 +22,11 @@ public class UserService implements IService<User> {
     @Transactional
     public User getById(final long id) {
         return userDao.getById(id);
+    }
+
+    @Override
+    public User getByLogin(final String login) {
+        return userDao.getByLogin(login);
     }
 
     @Override

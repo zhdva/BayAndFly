@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class UserDao implements IDao<User> {
+public class UserDao implements IUserDao {
     private SessionFactory sessionFactory;
 
     @Autowired
@@ -21,6 +21,12 @@ public class UserDao implements IDao<User> {
     public User getById(final long id) {
         Session session = sessionFactory.getCurrentSession();
         return session.get(User.class, id);
+    }
+
+    @Override
+    public User getByLogin(final String login) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(User.class, login);
     }
 
     @Override
