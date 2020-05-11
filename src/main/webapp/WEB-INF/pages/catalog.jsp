@@ -3,42 +3,37 @@
 <html>
 <head>
     <title>Каталог</title>
-    <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="/res/catalog.css"/>
 </head>
 <body>
     <%@include file="/WEB-INF/pages/nav.jsp"%>
-    <table class="catalog">
-    <caption class="heading">Каталог</caption>
+
+    <div class="content">
+        <h2>Каталог</h2>
         <c:if test="${devicesCount > 0}">
-            <tr>
-                <th>Название</th>
-                <th>Количество пассажиров</th>
-                <th>Максимальная скорость</th>
-                <th>Цена</th>
-                <th colspan="2" class="right-side">action</th>
-            </tr>
             <c:forEach var="device" items="${devices}" varStatus="i">
-                <tr>
-                    <td class="title">${device.title}</td>
-                    <td>${device.numberOfPassengers}</td>
-                    <td>${device.maxSpeed} км/ч</td>
-                    <td>${device.price}</td>
-                    <td>
-                        <a href="/">Взад</a>
-                    </td>
-                    <td class="right-side">
-                        <a href="/catalog">+++</a>
-                    </td>
-                </tr>
+                <div class="devicebox">
+                    <a href="/catalog/${device.id}" class="deviceref">
+                        <div>
+                            <img alt="Device" src="/res/images/device${device.id}.png">
+                            <div class="shortdscr">
+                                <h3>${device.title}</h3>
+                                <p>Макс. скорость: ${device.maxSpeed} км/ч, Кол-во пассажиров: ${device.numberOfPassengers}</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="price">
+                        <p>${device.price} Р</p>
+                        <button onclick="/buy">Купить</button>
+                    </div>
+                </div>
+
+                <hr color="gray">
             </c:forEach>
         </c:if>
         <c:if test="${devicesCount == 0}">
-            <tr>
-                <td colspan="6" style="font-size: 150%" class="left-side right-side">
-                    Каталог пуст :(
-                </td>
-            </tr>
+            <p>Каталог пуст :(</p>
         </c:if>
-    </table>
+    </div>
 </body>
 </html>

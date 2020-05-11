@@ -2,10 +2,12 @@
 <html>
 <head>
     <title>Контакты</title>
-    <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="/res/style.css"/>
 </head>
 <body>
-    <div class="contacts">
+    <%@include file="/WEB-INF/pages/nav.jsp"%>
+
+    <div class="content">
         <h3>Контакты</h3>
         <p>Центральный и единственный офис:<br>
         г. Самара, парковочное место №87 на стоянке ТРК "Космопорт"<br>
@@ -32,6 +34,6 @@
         Полина Ираклиевна Лодка<br>
         Тел: 8 666 300 20 05<br>
         Email: pilodka-discount@buyandfly.org</p>
-      </div>
+    </div>
 </body>
 </html>

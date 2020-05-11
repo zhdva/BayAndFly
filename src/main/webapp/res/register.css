@@ -20,31 +20,25 @@ hr {
   margin-bottom: 25px;
 }
 
-/* Set a style for all buttons */
-button {
-  background-color: rgb(134, 159, 206);
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+/* Float cancel and signup buttons and add an equal width */
+.signupbtn {
+    background-color: rgb(134, 159, 206);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    width: 60%;
 }
 
-button:hover {
+.signupbtn:hover {
   opacity:1;
 }
 
-/* Float cancel and signup buttons and add an equal width */
-.signupbtn {
-  width: 60%;
-}
-
 /* Add padding to container elements */
-.container {
-  padding: 16px;
-}
+
 
 .regform {
   display: box;

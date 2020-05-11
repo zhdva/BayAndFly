@@ -1,0 +1,40 @@
+.content {
+  max-width: 1000px;
+  margin: auto;
+  font-size: 20px;
+}
+
+.devicebox {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  border: 2px;
+}
+
+.devicebox:hover {
+  background-color: rgba(156, 181, 218, 0.397);
+}
+
+.devicebox button {
+  height: 50px;
+  width: 100px;
+}
+
+.deviceref img {
+  float: left;
+  width: 90px;
+  height: 90px;
+  margin: 5px;
+}
+
+.shortdscr {
+  float: left;
+  margin-left: 20px;
+  width: fit-content;
+  color: black;
+}
+
+.price {
+  float: right;
+  width: 200px;
+}
